@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #E6E6FA;
+  font-family: Arial, sans-serif;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background-color: #4caf50;
+  z-index: 100;
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+
+}
+
+
+.chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 50pc; /* Espaciado entre capítulos */
+  padding: 12.5% 0; /* Agrega espacio arriba y abajo */
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.chapter {
+  opacity: 0;
+  scroll-snap-align: start;
+  display: flex; /* Se necesita para justificar contenido */
+}
+
+.chapter:nth-of-type(odd) {
+  justify-content: flex-start;
+}
+
+.chapter:nth-of-type(even) {
+  justify-content: flex-end;
+}
+
+
+
+.recuadro {
+  width: 50vw;
+  display: flex;
+  align-items: stretch;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  transition: opacity 1s, transform 1s;
+
+}
+
+
+
+.chapter:nth-of-type(odd) .recuadro {
+  flex-direction: row;
+}
+
+.chapter:nth-of-type(even) .recuadro {
+  flex-direction: row-reverse;
+}
+
+
+/* No es necesario repetir .recuadro:nth-of-type(odd/even) aquí */
+
+/* Imagen y contenido */
+.imagen {
+  flex: 1;
+  max-width: 50%;
+  margin-right: 20px;
+  display: flex;
+}
+
+.imagen img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contenido {
+  flex: 2;
+  text-align: left;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contenido h1 {
+  font-family: 'Nosifer', sans-serif; /* Cambia 'Creepster' por la fuente que más te guste */
+
+  color: #414141;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.contenido p {
+  font-family: 'Roboto', sans-serif; /* Cambia 'Creepster' por la fuente que más te guste */
+  font-size: 16px;                  /* Tamaño de fuente adecuado */
+  line-height: 1.5;                 /* Espaciado entre líneas para mejorar la legibilidad */
+  color: #707070;                      /* Color de texto oscuro para buena visibilidad */
+  text-align: justify;              /* Alineación del texto para un aspecto limpio */
+  margin: 15px 0;                   /* Espaciado vertical para separar los párrafos */
+  padding: 0 10px;                  /* Un poco de espacio interno a los lados */
+  border-left: 4px solid #B0B0B0;   /* Línea decorativa a la izquierda */
+}
+
+.contenido button {
+  background: linear-gradient(135deg, #2A5CAA, #1A3E7A);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+.contenido button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #1A3E7A, #2A5CAA);
+}
+
+.contenido button:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenido button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(42, 92, 170, 0.4);
+}
+
