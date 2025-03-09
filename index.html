@@ -5,108 +5,145 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El viaje del Alma</title>
-  <!-- Incluimos GSAP y ScrollTrigger -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fuentes personalizadas -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
-  
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <!-- Estilos personalizados -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-
+<body class="d-flex flex-column min-vh-100">
+  <!-- Barra de progreso -->
   <div id="progressBar"></div>
 
+  <!-- Contenedor de puntos (dots) -->
+  <div id="progressBarContainer" class="fixed-top d-flex justify-content-center mt-3">
+    <div id="progressDots" class="d-flex gap-2"></div>
+  </div>
 
-  <div class="chapters">
-    <!-- Capítulo 1 - El Origen -->
-    <div class="chapter">
-      <div class="recuadro">
-        <div class="imagen">
-          <img src="https://i.ibb.co/v6sGcx9K/Leonardo-Lightning-XL-A-picturesque-village-at-dawn-nestled-be-0.jpg" alt="" srcset="">
+  <!-- Contenido principal -->
+  <div class="chapters container-fluid">
+    <!-- Capítulo 1 - El Origen (Impar: Contenido a la izquierda) -->
+    <div class="chapter mb-5">
+      <div class="row align-items-center justify-content-between">
+        <!-- Contenido -->
+        <div class="col-md-5 contenido">
+          <h1 class="display-6 fw-bold text-dark" style="font-family: 'Nosifer', sans-serif;">El Origen</h1>
+          <p class="text-muted" style="font-family: 'Roboto', sans-serif;">
+            El pueblo despertaba con el aroma a pan recién horneado y el crujir de la escarcha bajo las botas. Alma caminaba cada mañana por el empedrado áspero que serpenteara entre casas de madera resinosa, sintiendo en su pecho el eco de los truenos lejanos que retumbaban entre los picos nevados. Su libro de leyendas, con sus bordes gastados, era su único compañero fiel mientras el viento jugueteaba con su trenza, trayendo murmullos de arroyos ocultos y el canto lastimero de los pinos centinelas. En el mercado, entre el bullicio de los comerciantes y el tacto áspero de las monedas de cobre, una pregunta ardía en su mente: <em>¿Por qué el horizonte parece llamarme con voces de agua y piedra?</em>
+          </p>
+          <button class="btn btn-primary mt-3 custom-button">La llamada a la aventura</button>
         </div>
-        <div class="contenido">
-          <h1>El Origen</h1>
-          <p>El pueblo despertaba con el aroma a pan recién horneado y el crujir de la escarcha bajo las botas. Alma recorría cada mañana el empedrado áspero que serpenteaba entre casas de madera resinosa, sintiendo en su pecho el eco de los truenos lejanos que retumbaban entre los picos nevados. Sus dedos acariciaban distraídos los bordes gastados de su libro de leyendas mientras el viento jugueteaba con su trenza, trayendo murmullos de arroyos ocultos y el canto lastimero de los pinos centinelas. En el mercado, entre el bullicio de los comerciantes y el tacto áspero de las monedas de cobre, una pregunta quemaba su mente: <em>"¿Por qué el horizonte parece llamarme con voces de agua y piedra?"</em></p>
-          <button>La llamada a la aventura</button>
+        <!-- Imagen -->
+        <div class="col-md-6">
+          <img src="https://i.ibb.co/v6sGcx9K/Leonardo-Lightning-XL-A-picturesque-village-at-dawn-nestled-be-0.jpg" class="img-fluid rounded" alt="">
         </div>
       </div>
     </div>
 
-    <!-- Capítulo 2 - La Llamada a la Aventura -->
-    <div class="chapter">
-      <div class="recuadro">
-        <div class="imagen">
-          <img src="https://i.ibb.co/rKkfqhcC/Leonardo-Phoenix-10-Una-escena-mgica-al-estilo-de-un-cuento-de-3.jpg" alt="" srcset="">
+    <!-- Capítulo 2 - La Llamada a la Aventura (Par: Imagen a la izquierda) -->
+    <div class="chapter mb-5">
+      <div class="row align-items-center justify-content-between">
+        <!-- Imagen -->
+        <div class="col-md-6">
+          <img src="https://i.ibb.co/rKkfqhcC/Leonardo-Phoenix-10-Una-escena-mgica-al-estilo-de-un-cuento-de-3.jpg" class="img-fluid rounded" alt="">
         </div>
-        <div class="contenido">
-          <h1>La Llamada a la Aventura</h1>
-          <p>La noche envolvía el valle en un manto de plateado lunar cuando Alma sintió el primer escalofrío. Las estrellas titilaban como migajas de cristal sobre el lago negro, y el aire, cargado de aromas a menta salvaje y tierra removida, le hizo contener la respiración. Entre el ulular de un búho, distinguió voces ancestrales que susurraban en lenguas olvidadas. Sus manos temblaron al rozar la piedra rúnica junto al manantial, cuya superficie reflejaba no su rostro, sino una puerta de líquido obsidiana. <em>"No es miedo lo que siento"</em>, se repitió mientras empaquetaba provisiones con dedos ágiles, <em>"es el vértigo de las alas antes del primer vuelo"</em>.</p>
-          <button>El camino incierto</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Capítulo 3 - El Camino Incierto -->
-    <div class="chapter">
-      <div class="recuadro">
-        <div class="imagen">
-          <img src="https://i.ibb.co/gZ4GmBKv/Leonardo-Lightning-XL-An-epic-fantasy-scene-where-Alma-a-young-0.jpg" alt="" srcset="">
-        </div>
-        <div class="contenido">
-          <h1>El Camino Incierto</h1>
-          <p>El bosque devoró la luz del sol con sus fauces de musgo y enredaderas. Alma avanzaba entre raíces que se retorcían como venas terrestres, sintiendo en la nuca el aliento húmedo de la maleza. El río que cruzó al amanecer le había dejado las botas empapadas y la piel erizada por corrientes que cantaban canciones de ahogados. Al caer la tarde, encontró un claro donde las mariposas nocturnas danzaban alrededor de hongos bioluminiscentes. Al morder una manzana ácida robada a un árbol retorcido, descubrió que cada dolor -el roce de la mochila, el sabor amargo, el silbido del viento entre los abetos- era un verso en el poema de su transformación.</p>
-          <button>El encuentro con lo desconocido</button>
+        <!-- Contenido -->
+        <div class="col-md-5 contenido">
+          <h1 class="display-6 fw-bold text-dark" style="font-family: 'Nosifer', sans-serif;">La Llamada a la Aventura</h1>
+          <p class="text-muted" style="font-family: 'Roboto', sans-serif;">
+            La noche envolvía el valle en un manto de plateado lunar cuando Alma sintió el primer escalofrío. Las estrellas titilaban como migajas de cristal sobre el lago negro, y el aire, cargado de aromas a menta salvaje y tierra removida, le hizo contener la respiración. Entre el ulular de un búho, distinguió voces ancestrales que susurraban en lenguas olvidadas. Sus manos temblaron al rozar la piedra rúnica junto al manantial, cuya superficie reflejaba no su rostro, sino una puerta de líquido obsidiana. <em>"No es miedo lo que siento",</em> se dijo mientras empaquetaba provisiones con dedos ágiles, <em>"es el vértigo de las alas antes del primer vuelo".</em>
+          </p>
+          <button class="btn btn-primary mt-3 custom-button">El camino incierto</button>
         </div>
       </div>
     </div>
 
-    <!-- Capítulo 4 - El Encuentro con lo Desconocido -->
-    <div class="chapter">
-      <div class="recuadro">
-        <div class="imagen">
-          <img src="https://i.ibb.co/TMtmPPbM/Leonardo-Lightning-XL-A-contemplative-fantasy-scene-in-an-anci-3.jpg" alt="" srcset="">
+    <!-- Capítulo 3 - El Camino Incierto (Impar: Contenido a la izquierda) -->
+    <div class="chapter mb-5">
+      <div class="row align-items-center justify-content-between">
+        <!-- Contenido -->
+        <div class="col-md-5 contenido">
+          <h1 class="display-6 fw-bold text-dark" style="font-family: 'Nosifer', sans-serif;">El Camino Incierto</h1>
+          <p class="text-muted" style="font-family: 'Roboto', sans-serif;">
+            El bosque devoró la luz del sol con sus fauces de musgo y enredaderas. Alma avanzaba entre raíces que se retorcían como venas terrestres, sintiendo en la nuca el aliento húmedo de la maleza. El río que cruzó al amanecer le había dejado las botas empapadas y la piel erizada por corrientes que cantaban canciones de ahogados. Al caer la tarde, encontró un claro donde las mariposas nocturnas danzaban alrededor de hongos bioluminiscentes. Al morder una manzana ácida robada a un árbol retorcido, descubrió que cada dolor -el roce de la mochila, el sabor amargo, el silbido del viento entre los abetos- era un verso en el poema de su transformación.
+          </p>
+          <button class="btn btn-primary mt-3 custom-button">El encuentro con lo desconocido</button>
         </div>
-        <div class="contenido">
-          <h1>El Encuentro con lo Desconocido</h1>
-          <p>La cabaña emergió de la niebla como un hueso viejo entre las encías de la montaña. El ermitaño, cuya barba guardaba cristales de escarcha y ojos que reflejaban auroras boreales, le ofreció una infusión de raíces amargas en una taza tallada en cuarzo. <em>"El portal que buscas"</em>, dijo con voz de piedras rodando en un torrente, <em>"es espejo y no puerta. Lo que temes encontrar en la oscuridad... ya viaja contigo"</em>. Mientras hablaba, el fuego crepitante dibujaba sombras de bestias aladas en las paredes. Alma apretó el medallón de su madre muerta, sintiendo su peso como ancla contra la marea de dudas.</p>
-          <button>La revelación</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Capítulo 5 - La Revelación -->
-    <div class="chapter">
-      <div class="recuadro">
-        <div class="imagen">
-          <img src="https://i.ibb.co/PGwn1vYs/Leonardo-Lightning-XL-A-surreal-and-psychedelic-dimension-wher-0.jpg" alt="" srcset="">
-        </div>
-        <div class="contenido">
-          <h1>La Revelación</h1>
-          <p>Al cruzar el umbral, el mundo estalló en una sinfonía de color. El aire vibró con el zumbido de esferas doradas que flotaban como dientes de león cósmicos. Sus pies se hundieron en praderas que susurraban melodías olvidadas en lenguas de luz. Al tocar una flor de pétalos de vidrio, visiones de vidas paralelas danzaron bajo sus párpados: guerrera, sanadora, nómada, sabia. Una cascada de estrellas líquidas la bañó, disolviendo cicatrices antiguas y sembrando constelaciones bajo su piel. <em>"Esto no es un lugar"</em>, comprendió con lágrimas que brillaban como mercurio, <em>"es el eco de todo lo que podría ser"</em>.</p>
-          <button>El regreso transformado</button>
+        <!-- Imagen -->
+        <div class="col-md-6">
+          <img src="https://i.ibb.co/gZ4GmBKv/Leonardo-Lightning-XL-An-epic-fantasy-scene-where-Alma-a-young-0.jpg" class="img-fluid rounded" alt="">
         </div>
       </div>
     </div>
 
-    <!-- Capítulo 6 - El Regreso Transformado -->
-    <div class="chapter">
-      <div class="recuadro">
-        <div class="imagen">
-          <img src="https://i.ibb.co/7JCMPqcn/Leonardo-Lightning-XL-A-moving-luminous-sunset-scene-in-a-rura-0.jpg" alt="" srcset="">
+    <!-- Capítulo 4 - El Encuentro con lo Desconocido (Par: Imagen a la izquierda) -->
+    <div class="chapter mb-5">
+      <div class="row align-items-center justify-content-between">
+        <!-- Imagen -->
+        <div class="col-md-6">
+          <img src="https://i.ibb.co/TMtmPPbM/Leonardo-Lightning-XL-A-contemplative-fantasy-scene-in-an-anci-3.jpg" class="img-fluid rounded" alt="">
         </div>
-        <div class="contenido">
-          <h1>El Regreso Transformado</h1>
-          <p>El pueblo respiraba distinto. Ahora Alma escuchaba las risas enterradas en el rumor del río, veía historias de amor en las grietas de los muros centenarios. Sus manos, marcadas por cortes de rocas y quemaduras de estrellas, amasaban pan con semillas de sueños. Los niños se agolpaban para oírla describir el sabor de la luz crepuscular o cómo suena el silencio entre dos latidos. Donde antes veían montañas que aprisionaban, ahora divisaban dorsales de dragones dormidos, promesas de horizontes por conquistar. Y en las noches claras, cuando el viento jugaba con su cabello plateado por experiencias innombrables, el pueblo entero contenía la respiración... esperando oír el siguiente susurro del universo.</p>
+        <!-- Contenido -->
+        <div class="col-md-5 contenido">
+          <h1 class="display-6 fw-bold text-dark" style="font-family: 'Nosifer', sans-serif;">El Encuentro con lo Desconocido</h1>
+          <p class="text-muted" style="font-family: 'Roboto', sans-serif;">
+            La cabaña emergió de la niebla como un hueso viejo entre las encías de la montaña. El ermitaño, cuya barba guardaba cristales de escarcha y ojos que reflejaban auroras boreales, le ofreció una infusión de raíces amargas en una taza tallada en cuarzo. <em>"El portal que buscas"</em>, dijo con voz de piedras rodando en un torrente, <em>"es espejo y no puerta. Lo que temes encontrar en la oscuridad... ya viaja contigo".</em> Mientras hablaba, el fuego crepitante dibujaba sombras de bestias aladas en las paredes. Alma apretó el medallón de su madre muerta, sintiendo su peso como ancla contra la marea de dudas.
+          </p>
+          <button class="btn btn-primary mt-3 custom-button">La revelación</button>
         </div>
       </div>
     </div>
-</div>
 
+    <!-- Capítulo 5 - La Revelación (Impar: Contenido a la izquierda) -->
+    <div class="chapter mb-5">
+      <div class="row align-items-center justify-content-between">
+        <!-- Contenido -->
+        <div class="col-md-5 contenido">
+          <h1 class="display-6 fw-bold text-dark" style="font-family: 'Nosifer', sans-serif;">La Revelación</h1>
+          <p class="text-muted" style="font-family: 'Roboto', sans-serif;">
+            Al cruzar el umbral, el mundo estalló en una sinfonía de color. El aire vibró con el zumbido de esferas doradas que flotaban como dientes de león cósmicos. Sus pies se hundían en praderas que susurraban melodías olvidadas en lenguas de luz. Al tocar una flor de pétalos de vidrio, visiones de vidas paralelas danzaron bajo sus párpados: guerrera, sanadora, nómada, sabia. Una cascada de estrellas líquidas la bañó, disolviendo cicatrices antiguas y sembrando constelaciones bajo su piel. <em>"Esto no es un lugar"</em>, comprendió con lágrimas que brillaban como mercurio, <em>"es el eco de todo lo que podría ser".</em>
+          </p>
+          <button class="btn btn-primary mt-3 custom-button custom-button">El regreso transformado</button>
+        </div>
+        <!-- Imagen -->
+        <div class="col-md-6">
+          <img src="https://i.ibb.co/PGwn1vYs/Leonardo-Lightning-XL-A-surreal-and-psychedelic-dimension-wher-0.jpg" class="img-fluid rounded" alt="">
+        </div>
+      </div>
+    </div>
 
+    <!-- Capítulo 6 - El Regreso Transformado (Par: Imagen a la izquierda) -->
+    <div class="chapter mb-5">
+      <div class="row align-items-center justify-content-between">
+        <!-- Imagen -->
+        <div class="col-md-6">
+          <img src="https://i.ibb.co/7JCMPqcn/Leonardo-Lightning-XL-A-moving-luminous-sunset-scene-in-a-rura-0.jpg" class="img-fluid rounded" alt="">
+        </div>
+        <!-- Contenido -->
+        <div class="col-md-5 contenido">
+          <h1 class="display-6 fw-bold text-dark" style="font-family: 'Nosifer', sans-serif;">El Regreso Transformado</h1>
+          <p class="text-muted" style="font-family: 'Roboto', sans-serif;">
+            El pueblo respiraba distinto. Ahora Alma escuchaba las risas enterradas en el rumor del río, veía historias de amor en las grietas de los muros centenarios. Sus manos, marcadas por cortes de rocas y quemaduras de estrellas, amasaban pan con semillas de sueños. Los niños se agolpaban para oírla describir el sabor de la luz crepuscular o cómo suena el silencio entre dos latidos. Donde antes veían montañas que aprisionaban, ahora divisaban dorsales de dragones dormidos, promesas de horizontes por conquistar. Y en las noches claras, cuando el viento jugaba con su cabello plateado por experiencias innombrables, el pueblo entero contenía la respiración... esperando oír el siguiente susurro del universo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón de flecha hacia arriba -->
+  <button id="scrollToTop" class="scroll-btn btn btn-lg btn-circle btn-secondary position-fixed bottom-0 end-0 m-3">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19v-7.5l-5.5 5.5-1.4-1.4 7.9-7.9 7.9 7.9-1.4 1.4-5.5-5.5v7.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
+    </svg>
+  </button>
+
+  <!-- Librerías y scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="app.js"></script>
 </body>
 

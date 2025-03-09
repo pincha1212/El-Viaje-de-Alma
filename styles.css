@@ -1,13 +1,110 @@
+/* Estilos generales */
 body {
+  background-color: #E6E6FA;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  background-color: #E6E6FA;
-  font-family: Arial, sans-serif;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
 }
 
+/* Contenedores de capítulos */
+.chapter {
+  margin-bottom: 5rem; /* Aumenta el espacio entre capítulos */
+  scroll-snap-align: start;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.chapter.active {
+  opacity: 1;
+}
+
+/* Separación visual */
+.chapter {
+  padding: 2rem;
+}
+
+/* Espaciado interno */
+.contenido {
+  padding: 1.5rem;
+}
+
+/* Separación entre secciones */
+.chapter + .chapter {
+  margin-top: 5rem; /* Añade espacio superior entre capítulos */
+}
+
+/* Espacio alrededor del contenedor principal */
+.chapters {
+  padding: 2rem 0;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  .chapter {
+    margin-bottom: 3rem;
+  }
+  .chapter + .chapter {
+    margin-top: 3rem;
+  }
+}
+
+/* Ajustes para el botón de flecha */
+.btn-circle {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la barra de progreso con puntos */
+#progressBarContainer {
+  position: fixed;
+  top: 10px; /* Ajusta según la barra de progreso */
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+  padding: 0.5rem 1rem; /* Espacio interno */
+  z-index: 1000;
+  max-width: 20%; /* Ancho máximo */
+  margin: 0 auto; /* Centrar horizontalmente */
+  border-radius: 8px;
+}
+
+/* Ajustar los puntos para que no se apilen */
+#progressDots {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Espacio entre puntos */
+}
+
+/* Estilos para los puntos con emojis */
+.progress-dot {
+  width: 32px; /* Mayor tamaño para emojis */
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #333; /* Color de los emojis inactivos */
+  font-family: "Segoe UI Emoji", sans-serif; /* Fuente para emojis */
+}
+
+.progress-dot.active {
+  background-color: #FFD700 !important;
+  color: black !important; /* Color oscuro sobre fondo amarillo */
+}
+
+/* Estilo para la barra de progreso original */
 #progressBar {
   position: fixed;
   top: 0;
@@ -16,131 +113,38 @@ body {
   height: 5px;
   background-color: #4caf50;
   z-index: 100;
-  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
-
+  transition: width 0.3s, background-color 0.3s;
 }
 
 
-.chapters {
-  display: flex;
-  flex-direction: column;
-  gap: 50pc; /* Espaciado entre capítulos */
-  padding: 4.5% 0; /* Agrega espacio arriba y abajo */
-  scroll-snap-align: start;
-  position: relative;
-}
-
-.chapter {
-  opacity: 0;
-  scroll-snap-align: start;
-  display: flex; /* Se necesita para justificar contenido */
-}
-
-.chapter:nth-of-type(odd) {
-  justify-content: flex-start;
-}
-
-.chapter:nth-of-type(even) {
-  justify-content: flex-end;
-}
-
-
-
-.recuadro {
-  width: 100vw;
-  display: flex;
-  align-items: stretch;
-  max-width: 800px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  background-color: #ffffff;
-  transition: opacity 1s, transform 1s;
-
-}
-
-
-
-.chapter:nth-of-type(odd) .recuadro {
-  flex-direction: row;
-}
-
-.chapter:nth-of-type(even) .recuadro {
-  flex-direction: row-reverse;
-}
-
-
-/* No es necesario repetir .recuadro:nth-of-type(odd/even) aquí */
-
-/* Imagen y contenido */
-.imagen {
-  flex: 1;
-  max-width: 50%;
-  margin-right: 20px;
-  display: flex;
-}
-
-.imagen img {
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.contenido {
-  flex: 2;
-  text-align: left;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.contenido h1 {
-  font-family: 'Nosifer', sans-serif; /* Cambia 'Creepster' por la fuente que más te guste */
-
-  color: #414141;
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.contenido p {
-  font-family: 'Roboto', sans-serif; /* Cambia 'Creepster' por la fuente que más te guste */
-  font-size: 16px;                  /* Tamaño de fuente adecuado */
-  line-height: 1.5;                 /* Espaciado entre líneas para mejorar la legibilidad */
-  color: #707070;                      /* Color de texto oscuro para buena visibilidad */
-  text-align: justify;              /* Alineación del texto para un aspecto limpio */
-  margin: 15px 0;                   /* Espaciado vertical para separar los párrafos */
-  padding: 0 10px;                  /* Un poco de espacio interno a los lados */
-  border-left: 4px solid #B0B0B0;   /* Línea decorativa a la izquierda */
-}
-
-.contenido button {
-  background: linear-gradient(135deg, #2A5CAA, #1A3E7A);
+/* Estilos personalizados para los botones */
+.custom-button {
+  background-image: linear-gradient(135deg, #2A5CAA, #1A3E7A);
   color: white;
   padding: 12px 24px;
   font-size: 16px;
-  font-weight: bold;
   border-radius: 12px;
   border: none;
   cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
 }
 
-.contenido button:hover {
+.custom-button:hover {
   transform: scale(1.05);
+  background-image: linear-gradient(135deg, #1A3E7A, #2A5CAA);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, #1A3E7A, #2A5CAA);
 }
 
-.contenido button:active {
-  transform: scale(0.98);
+.custom-button:active {
+  transform: scale(1);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-.contenido button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(42, 92, 170, 0.4);
+/* Alineación en dispositivos pequeños */
+@media (max-width: 768px) {
+  .custom-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }
-
